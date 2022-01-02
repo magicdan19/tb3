@@ -2,7 +2,7 @@
 
 Projet ...
 
-# adresses IP des container
+# adresses IP des containers
 - roscore : 225
 - Gazebo : 226
 - RVIZ : 227

@@ -1,6 +1,9 @@
 # Ros melodic sur Jetson AGX et jetson Nano
 
-Projet ...
+Projet de robot tondeuse avec lidar, GPS-RTK2, HR-SR04, jetson nano, OpenCR,
+développé avec Ros Melodic sur Ubuntu 18.04
+Côté serveur, sur Jetson AGX
+basé sur la conteneurisation
 
 # adresses IP des containers
 - roscore : 222

@@ -1,7 +1,8 @@
 #!/bin/bash
 
-docker container commit magicdan/ros-master magicdan/ros-master:latest
-
+echo "*** commit ***"
+docker container commit dan magicdan/ros-master:latest
+echo "*** push ***"
 docker image push magicdan/ros-master
-
+echo "*** fin ***"
 

@@ -9,8 +9,9 @@ basé sur la conteneurisation avec aarch64 (arm64)
 - roscore : image de base de ROS melodic sur ubuntu 18.04
 - Gazebo : basée sur roscore avec ajout de Gazebo
 - RVIZ : basée sur roscore avec ajout RVIZ
-- robot : basée sur roscore ave ajout de Turtlebot3 et gazebo(nécessaire à la compilation)
+- robot : basée sur roscore avec ajout de Turtlebot3, RVIZ Set gazebo
+- teleop : baséée sur roscore avec teleop et joy
 
 # astuces
 pour ouvrir un nouveau terminal 
-     gnome-terminal
+- gnome-terminal

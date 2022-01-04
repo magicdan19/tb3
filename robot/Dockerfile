@@ -26,7 +26,11 @@ ros-melodic-rqt-image-view \
 ros-melodic-gmapping \
 ros-melodic-interactive-markers \
 ros-melodic-navigation \
-ros-melodic-gazebo-ros
+ros-melodic-gazebo-ros \
+ros-melodic-rviz \
+ros-melodic-robot-state-publisher \
+ros-melodic-joint-state-publisher \
+ros-melodic-joint-state-publisher-gui
 
 RUN mkdir -p /root/catkin_ws/src/ \
 && cd /root/catkin_ws/src/ \

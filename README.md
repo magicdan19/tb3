@@ -5,6 +5,8 @@ développé avec Ros Melodic sur Ubuntu 18.04
 Côté serveur, sur Jetson AGX
 basé sur la conteneurisation avec aarch64 (arm64)
 
+******* projet en cours de construction **********
+
 # Contenus des images et répertoires
 - roscore : image de base de ROS melodic sur ubuntu 18.04
 - Gazebo : basée sur roscore avec ajout de Gazebo

@@ -3,6 +3,7 @@ version: '3.9'
 networks:
   ros:
     driver: bridge
+    network_mode: service:ros-master #host
 
 services:
   ros-master:

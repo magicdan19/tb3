@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t magicdan/ros-teleop .
+docker build --force-rm -t magicdan/ros-teleop-full .

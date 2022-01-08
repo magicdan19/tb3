@@ -1,15 +1,25 @@
 version: '3.9'
+
+networks:
+  ros:
+    driver: bridge
+
 services:
   ros-master:
-    image: magicdan/ros-master:latest
-    command: stdbuf -o L roscore
-    restart: always
+    image: magicdan/ros-master-full:latest
+    networks:
+      - ros
     environment:
       - "ROS_MASTER_URI=http://ros-master:11311"
       - "ROS_HOSTNAME=ros-master"
+    build: .
+    command: roscore
+    restart: always
 
   teleop:
-    image: magicdan/ros-teleop
+    image: magicdan/ros-teleop-full
+    networks:
+      - ros
     depends_on:
       - ros-master
     environment:
@@ -18,33 +28,36 @@ services:
     privileged: true
     volumes:
       - /dev/input/js0:/dev/input/js0
-    command: stdbuf -o L roslaunch teleop_twist_joy teleop.launch
-    restart: always
+    command: rosrun teleop_twist_joy teleop.py
+    restart: on-failure:3
 
-  turtlesim:
-    image: magicdan/turtlesim
+  teleop2:
+    image: magicdan/ros-teleop-full
+    networks:
+      - ros
     depends_on:
       - ros-master
     environment:
       - "ROS_MASTER_URI=http://ros-master:11311"
-      - "ROS_HOSTNAME=turtlesim"
-      - "DISPLAY"
-      - "QT_X11_NO_MITSHM=1" #fix some QT bugs
-      - "NVIDIA_VISIBLE_DEVICES=all"
-      - "NVIDIA_DRIVER_CAPABILITIES=all"
-    runtime: nvidia
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-    command: stdbuf -o L rosrun turtlesim turtlesim_node
-    restart: always
+      - "ROS_HOSTNAME=teleop2"
+    privileged: true
+
+    command: python /catkin_ws/src/teleop/src/teleop.py
+    restart: on-failure:3
 
   rostopic:
-    image: magicdan/ros-master
+    image: magicdan/ros-master:latest
+    networks:
+      - ros
     depends_on:
       - ros-master
     environment:
       - "ROS_MASTER_URI=http://ros-master:11311"
       - "ROS_HOSTNAME=rostopic"
-    command: stdbuf -o L rostopic echo /cmd_vel
+    build: .
+    command: rostopic echo /joy
     restart: always
+    #on-failure:3
+
+
   

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t magicdan/ros-master .
+docker build -t magicdan/ros-master-full .

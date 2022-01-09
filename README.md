@@ -13,7 +13,7 @@ basé sur la conteneurisation avec aarch64 (arm64)
 - RVIZ : basée sur roscore avec ajout RVIZ
 - robot : basée sur roscore avec ajout de Turtlebot3, RVIZ Set gazebo
 - teleop : baséée sur roscore avec teleop et joy
-- tyrtlesim : basée sur roscore avec turtlesim (pour faire des tests de base)
+- turtlesim : basée sur roscore avec turtlesim (pour faire des tests de base)
 
 # astuces
 pour ouvrir un nouveau terminal 
